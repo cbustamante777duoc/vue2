@@ -9,12 +9,27 @@
 <body>
     <div id="app">
         <h1>{{titulo}}</h1>
+
+        <input type="text" v-model="nuevaFruta">
+        
+        <button v-on:click="AgregarFruta" @keyup.enter="AgregarFruta">
+         Agregar
+        </button>
+
         <ul>
-            <li v-for="item of frutas">{{item.nombre}} - {{item.cantidad}}
+            <li v-for="item of frutas">
+                <input type="number" v-model.number="item.cantidad">
+             {{item.nombre}} 
+             <button @click="item.cantidad++">+</button>
+             <button @click="item.cantidad--">-</button>
             <span v-if="item.cantidad === 0">sin stock</span>
             </li>
         </ul>
+        <h2>Total {{ sumarFrutas  }}</h2>
 
+        <!--@click-->
+        <input type="text" v-model="nuevaIntegrante">
+        <button @click="AgregarNuevaIntegrante">Agregar nueva integrante</button>
         <ul>
                 <li v-for="item of Blackpink">{{item.nombre}} - {{item.edad}}
                  <span v-if="item.nombre === 'Lalisa' "> La mejor bailarina</span>
@@ -22,6 +37,10 @@
                  <span v-if="item.nombre === 'Jisoo' "> La mayor</span>
             </li>
         </ul>
+        
+        <hr>
+
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./js/v-for.js"></script>
