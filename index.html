@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curso de vue</title>
+    
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <ul>
+            <li v-for="item of frutas">{{item.nombre}} - {{item.cantidad}}
+            <span v-if="item.cantidad === 0">sin stock</span>
+            </li>
+        </ul>
+
+        <ul>
+                <li v-for="item of Blackpink">{{item.nombre}} - {{item.edad}}
+                 <span v-if="item.nombre === 'Lalisa' "> La mejor bailarina</span>
+                 <span v-if="item.nombre === 'Jennie' "> La mas enojona</span>
+                 <span v-if="item.nombre === 'Jisoo' "> La mayor</span>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/v-for.js"></script>
+</body>
+</html>
